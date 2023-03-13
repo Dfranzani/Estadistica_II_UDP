@@ -1,0 +1,425 @@
+{
+    "sources": [
+        {
+            "ISBN": "978-0-495-38217-1 978-0-495-38223-2",
+            "author": [
+                {
+                    "family": "Devore",
+                    "given": "Jay L."
+                }
+            ],
+            "edition": "7th ed",
+            "id": "Devore",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "keyword": "Mathematical statistics, Probabilities",
+            "publisher": "Thomson/Brooks/Cole",
+            "publisher-place": "Belmont, CA",
+            "title": "Probability and statistics for engineering and the sciences",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-1-55860-932-7",
+            "author": [
+                {
+                    "family": "Brachman",
+                    "given": "Ronald J."
+                },
+                {
+                    "family": "Levesque",
+                    "given": "Hector J."
+                }
+            ],
+            "id": "brachman_knowledge_2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "keyword": "Knowledge representation (Information theory), Reasoning",
+            "publisher": "Morgan Kaufmann",
+            "publisher-place": "Amsterdam ; Boston",
+            "title": "Knowledge representation and reasoning",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-607-481-319-7",
+            "author": [
+                {
+                    "family": "Anderson",
+                    "given": "David R."
+                },
+                {
+                    "family": "Sweeney",
+                    "given": "Dennis J."
+                },
+                {
+                    "family": "Williams",
+                    "given": "Thomas A."
+                }
+            ],
+            "edition": "10a ed",
+            "id": "anderson",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "publisher": "Cengage Learning",
+            "publisher-place": "México",
+            "title": "Estadística para administración y economía",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "R-base",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A Language and Environment for Statistical Computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=ggplot2",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Pedersen",
+                    "given": "Thomas Lin"
+                },
+                {
+                    "family": "Takahashi",
+                    "given": "Kohske"
+                },
+                {
+                    "family": "Wilke",
+                    "given": "Claus"
+                },
+                {
+                    "family": "Woo",
+                    "given": "Kara"
+                },
+                {
+                    "family": "Yutani",
+                    "given": "Hiroaki"
+                },
+                {
+                    "family": "Dunnington",
+                    "given": "Dewey"
+                }
+            ],
+            "id": "R-ggplot2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "note": "R package version 3.3.6",
+            "title": "ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics",
+            "title-short": "ggplot2",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hyndman",
+                    "given": "Rob J"
+                }
+            ],
+            "container-title": "Monash University",
+            "id": "hyndman1995problem",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "1-2",
+            "title": "The problem with Sturges’ rule for constructing histograms",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sturges",
+                    "given": "Herbert A"
+                }
+            ],
+            "container-title": "Journal of the american statistical association",
+            "id": "sturges1926choice",
+            "issue": "153",
+            "issued": {
+                "date-parts": [
+                    [
+                        1926
+                    ]
+                ]
+            },
+            "page": "65-66",
+            "publisher": "New York",
+            "title": "The choice of a class interval",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "author": [
+                {
+                    "family": "Tukey",
+                    "given": "John W."
+                }
+            ],
+            "id": "Tukey",
+            "issued": {
+                "date-parts": [
+                    [
+                        1977
+                    ]
+                ]
+            },
+            "publisher": "Addison-Wesley",
+            "title": "Exploratory Data Analysis",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "James",
+                    "given": "Gareth"
+                },
+                {
+                    "family": "Witten",
+                    "given": "Daniela"
+                },
+                {
+                    "family": "Hastie",
+                    "given": "Trevor"
+                },
+                {
+                    "family": "Tibshirani",
+                    "given": "Robert"
+                }
+            ],
+            "id": "James2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "title": "An Introduction to Statistical Learning: with Applications in R",
+            "title-short": "An Introduction to Statistical Learning",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hintze",
+                    "given": "J. L."
+                },
+                {
+                    "family": "Nelson",
+                    "given": "R. D."
+                }
+            ],
+            "container-title": "The American Statistician",
+            "id": "hintze1998violin",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "page": "181-184",
+            "publisher": "Taylor & Francis",
+            "title": "Violin Plots: A Box Plot-Density Trace Synergism",
+            "title-short": "Violin Plots",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rowlingson",
+                    "given": "Barry"
+                }
+            ],
+            "id": "rowlingson2016data",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "title": "Data Analysis with R",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Healy",
+                    "given": "Kieran"
+                }
+            ],
+            "id": "healy2019data",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Princeton University Press",
+            "title": "Data Visualization: A Practical Introduction",
+            "title-short": "Data Visualization",
+            "type": "book"
+        },
+        {
+            "URL": "https://bookdown.org/rdpeng/rprogdatascience/",
+            "author": [
+                {
+                    "family": "Peng",
+                    "given": "Roger D."
+                }
+            ],
+            "id": "peng2016r",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Leanpub",
+            "publisher-place": "Victoria, BC, Canada",
+            "title": "R programming for data science",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-1-4614-9020-3_6",
+            "ISBN": "978-1-4614-9020-3",
+            "URL": "https://doi.org/10.1007/978-1-4614-9020-3_6",
+            "abstract": "R includes an online help. It is very complete and very well structured for all functions and for the various symbols in the language. There are several ways to access the help files; the main method is help(). It is used in command line mode.",
+            "author": [
+                {
+                    "dropping-particle": "de",
+                    "family": "Micheaux",
+                    "given": "Pierre Lafaye"
+                },
+                {
+                    "family": "Drouilhet",
+                    "given": "Rémy"
+                },
+                {
+                    "family": "Liquet",
+                    "given": "Benoit"
+                }
+            ],
+            "container-title": "The R Software: Fundamentals of Programming and Statistical Analysis",
+            "id": "deMicheaux2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "141-150",
+            "publisher": "Springer New York",
+            "publisher-place": "New York, NY",
+            "title": "R and Its Documentation",
+            "type": "chapter"
+        },
+        {
+            "ISBN": "978-0-387-98140-6",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "collection-title": "Use R!",
+            "id": "wickham_ggplot2_2009",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "keyword": "Datenanalyse, Graphic methods, Graphische Darstellung, Plot (Graphische Darstellung), R (Computer program language), R (Programm), Visualisierung",
+            "publisher": "Springer",
+            "publisher-place": "New York",
+            "title": "Ggplot2: elegant graphics for data analysis",
+            "title-short": "Ggplot2",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Larsen",
+                    "given": "Richard J."
+                },
+                {
+                    "family": "Marx",
+                    "given": "Morris L."
+                }
+            ],
+            "edition": "6th",
+            "id": "larsen",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "Pearson",
+            "title": "An Introduction to Mathematical Statistics and Its Applications",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "refs.bib"
+    ]
+}

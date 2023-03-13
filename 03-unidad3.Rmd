@@ -1,0 +1,21 @@
+# ANOVA y pruebas no paramétricas
+
+## ANOVA de un factor
+
+### Varianzas
+### Condiciones
+### Tamaño del efecto
+
+## ANOVA de dos factores
+
+### Varianzas
+### Condiciones
+### Tamaño del efecto
+
+## Análisis de homogeneidad de varianzas
+### Prueba de Levene y Barlett
+
+## Pruebas no paramétricas
+### Pruebas de los rangos signados
+### Prueba de W-M-W
+### Prueba de Kruskall - Wallis

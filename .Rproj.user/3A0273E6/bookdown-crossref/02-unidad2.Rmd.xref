@@ -1,0 +1,33 @@
+h1:regresión-lineal Regresión Lineal
+h2:análisis-descriptivo-de-datos Análisis descriptivo de datos
+h3:gráficos Gráficos
+h3:tablas Tablas
+h2:covarianza Covarianza
+h2:correlación Correlación
+h2:regresión-lineal-simple Regresión lineal simple
+h3:suma-cuadrática-de-errores Suma cuadrática de errores
+h3:estimadores-de-mínimos-cuadrados Estimadores de mínimos cuadrados
+h3:pruebas-de-hipótesis Pruebas de hipótesis
+h3:supuestos Supuestos
+h4:linealidad Linealidad
+h4:normalidad Normalidad
+h4:homocedasticidad Homocedasticidad
+h4:independencia Independencia
+h3:error-estándar-residual Error estándar residual
+h3:coeficiente-de-determinación Coeficiente de determinación
+h2:regresión-lineal-múltiple Regresión lineal múltiple
+h3:suma-cuadrática-de-errores-1 Suma cuadrática de errores
+h3:suma-cuadrática-total Suma cuadrática total
+h3:estimadores-de-mínimos-cuadrados-1 Estimadores de mínimos cuadrados
+h3:pruebas-de-hipótesis-1 Pruebas de hipótesis
+h3:supuestos-1 Supuestos
+h4:linealidad-1 Linealidad
+h4:normalidad-1 Normalidad
+h4:homocedasticidad-1 Homocedasticidad
+h4:independencia-1 Independencia
+h3:error-estándar-residual-1 Error estándar residual
+h3:coeficiente-de-determinación-ajustado Coeficiente de determinación ajustado
+h2:selección-de-variables Selección de variables
+h3:forward Forward
+h3:backward Backward
+

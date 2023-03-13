@@ -1,0 +1,24 @@
+h1:pruebas-de-hipótesis Pruebas de hipótesis
+h2:concepto Concepto
+h3:elaboración Elaboración
+tab:hipotesis Planteamiento de las pruebas de hipótesis
+h3:errores-tipo-i-y-ii Errores tipo I y II
+h3:procedimiento-de-prueba Procedimiento de prueba
+fig:graficovalorp Estadístico de prueba para un prueba altenativa con signo $>$
+tab:regiones Hipótesis alternativa, valor-p y estadístico de prueba
+fig:regiones3 Estadísticos de prueba
+fig:regiones2 Valor-p, el área bajo la curva
+h3:intervalos-de-confianza Intervalos de confianza
+tab:ICpruebas Hipótesis alternativa e Intervalo de confianza
+h2:pruebas Pruebas de hipótesis para la media
+h3:pruebas-de-hipótesis-para-la-media-de-una-distribución-normal-con-varianza-poblacional-conocida Pruebas de hipótesis para la media de una distribución normal con varianza poblacional conocida
+tab:unamedia1 Criterios de rechazo para la prueba de una media con varianza poblacional conocida
+h3:pruebas-de-hipótesis-para-la-media-de-una-distribución-normal-con-varianza-poblacional-desconocida Pruebas de hipótesis para la media de una distribución normal con varianza poblacional desconocida
+tab:unamedia2 Criterios de rechazo para la prueba de una media con varianza poblacional conocida
+h2:pruebas-de-hipótesis-para-la-diferencia-de-medias Pruebas de hipótesis para la diferencia de medias
+h3:prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-conocidas Prueba de hipótesis para la diferencia de medias de dos distribuciones normales con varianzas poblacionales conocidas
+h3:prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-desconocidas-e-iguales Prueba de hipótesis para la diferencia de medias de dos distribuciones normales con varianzas poblacionales desconocidas e iguales
+h3:prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-desconocidas-y-distintas Prueba de hipótesis para la diferencia de medias de dos distribuciones normales con varianzas poblacionales desconocidas y distintas
+h2:prueba-de-hipótesis-para-comparación-de-varianzas Prueba de hipótesis para comparación de varianzas
+h2:prueba-de-hipótesis-para-la-diferencia-de-proporciones Prueba de hipótesis para la diferencia de proporciones
+

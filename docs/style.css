@@ -1,0 +1,75 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+  text-align: center;
+}
+
+p code {
+  white-space: inherit;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+
+pre code {
+  white-space: inherit;
+}
+
+p {
+  text-align: justify;
+}
+
+li {
+  text-align: justify;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.book .book-summary {
+  width: 350px;
+  position:absolute;
+  top:0;
+  left:-350px;
+}
+
+.book.with-summary .book-header.fixed {
+    left: 350px;
+}
+
+.book.with-summary .book-body {
+    left: 350px;
+}
+
+h1,h2,h3,h4,h5 {
+  color: #730000;
+}
+
+#header .subtitle {
+  color: #000000;
+  font-size: 15pt;
+}
+
+#header .author {
+  font-weight: bold;
+}
+
+#header .date {
+  font-size: 11pt;
+}
+
+/* Independiente del archivo .csl para la bibliografía,
+se tuvo que agregar la identación manualmente (aunque viniense dentro del .csl).
+Además, se actualizó pandoc a 3.0.1. En el archivo Index.Rmd* está
+declarada la versión de pandoc a utilizar */
+
+.references {
+    text-indent: -1.5em;
+    padding-left: 1.5em;
+    text-align: justify;
+}
+

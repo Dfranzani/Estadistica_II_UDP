@@ -1,0 +1,52 @@
+# Regresión Lineal
+
+## Análisis descriptivo de datos
+
+### Gráficos
+### Tablas
+
+## Covarianza
+## Correlación
+
+## Regresión lineal simple
+
+### Suma cuadrática de errores
+### Estimadores de mínimos cuadrados
+
+### Pruebas de hipótesis
+
+### Supuestos
+#### Linealidad {.unlisted .unnumbered} 
+#### Normalidad {.unlisted .unnumbered}
+#### Homocedasticidad {.unlisted .unnumbered}
+#### Independencia {.unlisted .unnumbered}
+
+
+### Error estándar residual
+### Coeficiente de determinación
+
+## Regresión lineal múltiple
+
+### Suma cuadrática de errores
+### Suma cuadrática total
+### Estimadores de mínimos cuadrados
+
+### Pruebas de hipótesis
+
+### Supuestos
+#### Linealidad {.unlisted .unnumbered} 
+#### Normalidad {.unlisted .unnumbered}
+#### Homocedasticidad {.unlisted .unnumbered}
+#### Independencia {.unlisted .unnumbered}
+
+### Error estándar residual
+### Coeficiente de determinación ajustado
+
+## Selección de variables
+### Forward
+### Backward
+
+
+
+
+

@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 1 Pruebas de hipótesis | Estadística II &amp; Inferencia Estadística</title>
+  <meta name="description" content="Curso básico de Estadística para ingeniería" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 1 Pruebas de hipótesis | Estadística II &amp; Inferencia Estadística" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Curso básico de Estadística para ingeniería" />
+  <meta name="github-repo" content="Dfranzani/Estadistica_I_UDP" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 1 Pruebas de hipótesis | Estadística II &amp; Inferencia Estadística" />
+  
+  <meta name="twitter:description" content="Curso básico de Estadística para ingeniería" />
+  
+
+<meta name="author" content="Coordinación de Estadística" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modalidad.html"/>
+<link rel="next" href="regresión-lineal.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><img src="logo/FAE.png" class="img-responsive"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="" data-path="modalidad.html"><a href="modalidad.html"><i class="fa fa-check"></i>Modalidad</a></li>
+<li class="chapter" data-level="1" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html"><i class="fa fa-check"></i><b>1</b> Pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#concepto"><i class="fa fa-check"></i><b>1.1</b> Concepto</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#elaboración"><i class="fa fa-check"></i><b>1.1.1</b> Elaboración</a></li>
+<li class="chapter" data-level="1.1.2" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#errores-tipo-i-y-ii"><i class="fa fa-check"></i><b>1.1.2</b> Errores tipo I y II</a></li>
+<li class="chapter" data-level="1.1.3" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#procedimiento-de-prueba"><i class="fa fa-check"></i><b>1.1.3</b> Procedimiento de prueba</a></li>
+<li class="chapter" data-level="1.1.4" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>1.1.4</b> Intervalos de confianza</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#pruebas"><i class="fa fa-check"></i><b>1.2</b> Pruebas de hipótesis para la media</a></li>
+<li class="chapter" data-level="1.3" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#pruebas-de-hipótesis-para-la-diferencia-de-medias"><i class="fa fa-check"></i><b>1.3</b> Pruebas de hipótesis para la diferencia de medias</a></li>
+<li class="chapter" data-level="1.4" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#prueba-de-hipótesis-para-comparación-de-varianzas"><i class="fa fa-check"></i><b>1.4</b> Prueba de hipótesis para comparación de varianzas</a></li>
+<li class="chapter" data-level="1.5" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#prueba-de-hipótesis-para-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>1.5</b> Prueba de hipótesis para la diferencia de proporciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="regresión-lineal.html"><a href="regresión-lineal.html"><i class="fa fa-check"></i><b>2</b> Regresión Lineal</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="regresión-lineal.html"><a href="regresión-lineal.html#análisis-descriptivo-de-datos"><i class="fa fa-check"></i><b>2.1</b> Análisis descriptivo de datos</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="regresión-lineal.html"><a href="regresión-lineal.html#gráficos"><i class="fa fa-check"></i><b>2.1.1</b> Gráficos</a></li>
+<li class="chapter" data-level="2.1.2" data-path="regresión-lineal.html"><a href="regresión-lineal.html#tablas"><i class="fa fa-check"></i><b>2.1.2</b> Tablas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="regresión-lineal.html"><a href="regresión-lineal.html#covarianza"><i class="fa fa-check"></i><b>2.2</b> Covarianza</a></li>
+<li class="chapter" data-level="2.3" data-path="regresión-lineal.html"><a href="regresión-lineal.html#correlación"><i class="fa fa-check"></i><b>2.3</b> Correlación</a></li>
+<li class="chapter" data-level="2.4" data-path="regresión-lineal.html"><a href="regresión-lineal.html#regresión-lineal-simple"><i class="fa fa-check"></i><b>2.4</b> Regresión lineal simple</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="regresión-lineal.html"><a href="regresión-lineal.html#suma-cuadrática-de-errores"><i class="fa fa-check"></i><b>2.4.1</b> Suma cuadrática de errores</a></li>
+<li class="chapter" data-level="2.4.2" data-path="regresión-lineal.html"><a href="regresión-lineal.html#estimadores-de-mínimos-cuadrados"><i class="fa fa-check"></i><b>2.4.2</b> Estimadores de mínimos cuadrados</a></li>
+<li class="chapter" data-level="2.4.3" data-path="regresión-lineal.html"><a href="regresión-lineal.html#pruebas-de-hipótesis-1"><i class="fa fa-check"></i><b>2.4.3</b> Pruebas de hipótesis</a></li>
+<li class="chapter" data-level="2.4.4" data-path="regresión-lineal.html"><a href="regresión-lineal.html#supuestos"><i class="fa fa-check"></i><b>2.4.4</b> Supuestos</a></li>
+<li class="chapter" data-level="2.4.5" data-path="regresión-lineal.html"><a href="regresión-lineal.html#error-estándar-residual"><i class="fa fa-check"></i><b>2.4.5</b> Error estándar residual</a></li>
+<li class="chapter" data-level="2.4.6" data-path="regresión-lineal.html"><a href="regresión-lineal.html#coeficiente-de-determinación"><i class="fa fa-check"></i><b>2.4.6</b> Coeficiente de determinación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="regresión-lineal.html"><a href="regresión-lineal.html#regresión-lineal-múltiple"><i class="fa fa-check"></i><b>2.5</b> Regresión lineal múltiple</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="regresión-lineal.html"><a href="regresión-lineal.html#suma-cuadrática-de-errores-1"><i class="fa fa-check"></i><b>2.5.1</b> Suma cuadrática de errores</a></li>
+<li class="chapter" data-level="2.5.2" data-path="regresión-lineal.html"><a href="regresión-lineal.html#suma-cuadrática-total"><i class="fa fa-check"></i><b>2.5.2</b> Suma cuadrática total</a></li>
+<li class="chapter" data-level="2.5.3" data-path="regresión-lineal.html"><a href="regresión-lineal.html#estimadores-de-mínimos-cuadrados-1"><i class="fa fa-check"></i><b>2.5.3</b> Estimadores de mínimos cuadrados</a></li>
+<li class="chapter" data-level="2.5.4" data-path="regresión-lineal.html"><a href="regresión-lineal.html#pruebas-de-hipótesis-2"><i class="fa fa-check"></i><b>2.5.4</b> Pruebas de hipótesis</a></li>
+<li class="chapter" data-level="2.5.5" data-path="regresión-lineal.html"><a href="regresión-lineal.html#supuestos-1"><i class="fa fa-check"></i><b>2.5.5</b> Supuestos</a></li>
+<li class="chapter" data-level="2.5.6" data-path="regresión-lineal.html"><a href="regresión-lineal.html#error-estándar-residual-1"><i class="fa fa-check"></i><b>2.5.6</b> Error estándar residual</a></li>
+<li class="chapter" data-level="2.5.7" data-path="regresión-lineal.html"><a href="regresión-lineal.html#coeficiente-de-determinación-ajustado"><i class="fa fa-check"></i><b>2.5.7</b> Coeficiente de determinación ajustado</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="regresión-lineal.html"><a href="regresión-lineal.html#selección-de-variables"><i class="fa fa-check"></i><b>2.6</b> Selección de variables</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="regresión-lineal.html"><a href="regresión-lineal.html#forward"><i class="fa fa-check"></i><b>2.6.1</b> Forward</a></li>
+<li class="chapter" data-level="2.6.2" data-path="regresión-lineal.html"><a href="regresión-lineal.html#backward"><i class="fa fa-check"></i><b>2.6.2</b> Backward</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html"><i class="fa fa-check"></i><b>3</b> ANOVA y pruebas no paramétricas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#anova-de-un-factor"><i class="fa fa-check"></i><b>3.1</b> ANOVA de un factor</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#varianzas"><i class="fa fa-check"></i><b>3.1.1</b> Varianzas</a></li>
+<li class="chapter" data-level="3.1.2" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#condiciones"><i class="fa fa-check"></i><b>3.1.2</b> Condiciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#tamaño-del-efecto"><i class="fa fa-check"></i><b>3.1.3</b> Tamaño del efecto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#anova-de-dos-factores"><i class="fa fa-check"></i><b>3.2</b> ANOVA de dos factores</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#varianzas-1"><i class="fa fa-check"></i><b>3.2.1</b> Varianzas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#condiciones-1"><i class="fa fa-check"></i><b>3.2.2</b> Condiciones</a></li>
+<li class="chapter" data-level="3.2.3" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#tamaño-del-efecto-1"><i class="fa fa-check"></i><b>3.2.3</b> Tamaño del efecto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#análisis-de-homogeneidad-de-varianzas"><i class="fa fa-check"></i><b>3.3</b> Análisis de homogeneidad de varianzas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#prueba-de-levene-y-barlett"><i class="fa fa-check"></i><b>3.3.1</b> Prueba de Levene y Barlett</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#pruebas-no-paramétricas"><i class="fa fa-check"></i><b>3.4</b> Pruebas no paramétricas</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#pruebas-de-los-rangos-signados"><i class="fa fa-check"></i><b>3.4.1</b> Pruebas de los rangos signados</a></li>
+<li class="chapter" data-level="3.4.2" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#prueba-de-w-m-w"><i class="fa fa-check"></i><b>3.4.2</b> Prueba de W-M-W</a></li>
+<li class="chapter" data-level="3.4.3" data-path="anova-y-pruebas-no-paramétricas.html"><a href="anova-y-pruebas-no-paramétricas.html#prueba-de-kruskall---wallis"><i class="fa fa-check"></i><b>3.4.3</b> Prueba de Kruskall - Wallis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://www.linkedin.com/in/dfranzani" target="blank">Autor</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística II &amp; Inferencia Estadística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pruebas-de-hipótesis" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Unidad 1</span> Pruebas de hipótesis<a href="pruebas-de-hipótesis.html#pruebas-de-hipótesis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="concepto" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Concepto<a href="pruebas-de-hipótesis.html#concepto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una <strong>hipótesis estadística</strong> o simplemente <em>hipótesis</em> es una pretensión o aseveración sobre el valor de un solo parámetro (característica de la población o característica de una distribución de la población) o sobre los valores de varios parámetros <span class="citation">(<a href="#ref-Devore" role="doc-biblioref">Devore, 2008</a>, página 285)</span> <span class="citation">(<a href="#ref-anderson" role="doc-biblioref">Anderson et al., 2008</a>, página 340)</span>.</p>
+<p>En cualquier cualquier problema de prueba de hipótesis, existen dos hipótesis contradictorias consideradas, la hipótesis nula y la alternativa.</p>
+<p>La <strong>hipótesis nula</strong> denotada por <span class="math inline">\(H_0\)</span>, es la pretensión de que inicialmente se supone cierta (la pretensión de “creencia previa”). La <strong>hipótesis alternativa</strong> denotada por <span class="math inline">\(H_1\)</span> (o <span class="math inline">\(H_a\)</span>), es la aseveración contradictoria a <span class="math inline">\(H_0\)</span>.</p>
+<p>La hipótesis nula será rechazada en favor de la hipótesis alternativa solo si la evidencia muestral sugiere que <span class="math inline">\(H_0\)</span> es falsa. Si la muestra no contradice fuertemente a <span class="math inline">\(H_0\)</span>, se continuará creyendo en la verdad de la hipótesis nula. Las dos posibles conclusiones derivadas de un análisis de prueba de hipótesis son entonces <em>rechazar</em> <span class="math inline">\(H_0\)</span> o <em>no rechazar</em> <span class="math inline">\(H_0\)</span>.</p>
+<div id="elaboración" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Elaboración<a href="pruebas-de-hipótesis.html#elaboración" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En algunas aplicaciones no parece obvio cómo formular la hipótesis nula y alternativa. Se debe tener cuidado en estructurar la hipótesis apropiadamente de manera que la conclusión de la prueba de hipótesis proporcione la información que el investigador o la persona encargada de tomar las decisiones desea. A partir de la situación, las pruebas de hipótesis pueden tomar tres formas (tabla <a href="pruebas-de-hipótesis.html#tab:hipotesis">1.1</a>), las cuales se diferencian en el desigualdad o igualdad empleada en la hipótesis alternativa.</p>
+<table class="table table-condensed table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:hipotesis">Tabla 1.1: </span>Planteamiento de las pruebas de hipótesis
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Caso 1
+</th>
+<th style="text-align:center;">
+Caso 2
+</th>
+<th style="text-align:center;">
+Caso 3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(H_0: \theta = \theta_0\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_0: \theta = \theta_0\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_0: \theta = \theta_0\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(H_1: \theta \neq \theta_0\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_1: \theta &gt; \theta_0\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_1:\theta &lt; \theta_0\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>En diversas ocasiones, <span class="math inline">\(H_1\)</span> se conoce como la “hipótesis del investigador”, puesto que es la pretensión que al investigador en realidad le gustaría validar. La palabra <em>nulo</em> “significa sin valor”, la que sugieres que <span class="math inline">\(H_0\)</span> no deberá ser identificada con la hipótesis de ningún cambio.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-1" class="example"><strong>Ejemplo 1.1  </strong></span>Considérese, que el 10% de todas las tarjetas de circuito producidas por un cierto fabricante durante un periodo de tiempo reciente estaban defectuosas. Un ingeniero ha sugerido un cambio en el proceso de producción en la creencia de que dará por resultado una proporción reducida del proceso cambiado.</p>
+<p>La hipótesis alternativa (posición del investigador) es <span class="math inline">\(H_1: p &lt;0.10\)</span>, la pretensión de que la modificación del procesos redujo la proporción de las tarjetas defectuosas. Una opción natural para <span class="math inline">\(H_0\)</span> en esta situación es la pretensión contraria a la establecida en <span class="math inline">\(H_1\)</span>, es decir, <span class="math inline">\(p\geq 0.1\)</span>. En su lugar se considera <span class="math inline">\(H_0: p = 0.1\)</span> contra <span class="math inline">\(H_1: p &lt; 0.1\)</span>, tal como se expuso en la tabla anterior.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Ejercicio 1.1  </strong></span>El gerente de Danvers-Hilton Resort afirma que la cantidad media que gastan los huéspedes en un fin de semana es menos de <span class="math inline">\(\$600\)</span> dólares. Un miembro del equipo de contadores observó que en los últimos meses habían aumentado tales cantidades. El contador emplea una muestra de cuentas de fin de semana para probar la afirmación del gerente.</p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Qué forma de hipótesis deberá usar para probar la afirmación del gerente? Explique.
+<table class="table table-condensed table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Caso 1
+</th>
+<th style="text-align:center;">
+Caso 2
+</th>
+<th style="text-align:center;">
+Caso 3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(H_0: \mu = 600\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_0: \mu = 600\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_0: \mu = 600\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(H_1: \mu \neq 600\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_1: \mu &gt; 600\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_1:\mu &lt; 600\)</span>
+</td>
+</tr>
+</tbody>
+</table></li>
+<li>¿Cuál es la conclusión apropiada cuando no se puede rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>?</li>
+<li>¿Cuál es la conclusión apropiada cuando se puede rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Ejercicio 1.2  </strong></span>El gerente de un negocio de venta de automóviles está pensando en un nuevo plan de bonificaciones, con objeto de incrementar el volumen de ventas. Al presente, el volumen medio de ventas es 14 automóviles por mes. El gerente desea realizar un estudio para ver si el plan de
+bonificaciones incrementa el volumen de ventas. Para recolectar los datos, una muestra de vendedores venderá durante un mes bajo el nuevo plan de bonificaciones.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Dé las hipótesis nula y alternativa más adecuadas para este estudio.</li>
+<li>Comente la conclusión resultante en el caso en que <span class="math inline">\(H_0\)</span> no pueda rechazarse.</li>
+<li>Comente la conclusión que se obtendrá si <span class="math inline">\(H_0\)</span> puede rechazarse.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Ejercicio 1.3  </strong></span>Debido a los costos y al tiempo de adaptación de la producción, un director de fabricación antes de implantar un nuevo método de fabricación, debe convencer al gerente de que ese nuevo método de fabricación reducirá los costos. El costo medio del actual método de producción es <span class="math inline">\(\$220\)</span> por hora. En un estudio se medirá el costo del nuevo método durante un periodo muestral de producción,</p>
+<ol style="list-style-type: lower-alpha">
+<li>Dé las hipótesis nula y alternativa más adecuadas para este estudio.</li>
+<li>Haga un comentario sobre la conclusión cuando <span class="math inline">\(H_0\)</span> no pueda rechazarse.</li>
+<li>Dé un comentario sobre la conclusión cuando <span class="math inline">\(H_0\)</span> pueda rechazarse.</li>
+</ol>
+</div>
+</div>
+<div id="errores-tipo-i-y-ii" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Errores tipo I y II<a href="pruebas-de-hipótesis.html#errores-tipo-i-y-ii" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las hipótesis nula y alternativa son afirmaciones opuestas acerca de la población. Una de las dos, ya sea la hipótesis nula o la alternativa es verdadera, pero no ambas. Lo ideal es que la prueba de hipótesis lleve a la aceptación de <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> sea verdadera y al rechazo de <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_1\)</span> sea verdadera. Por desgracia, las conclusiones correctas no siempre son posibles. Como la prueba de hipótesis se basa en una información muestral debe tenerse en cuenta que existe la posibilidad de error.</p>
+<p>Los dos tipos de errores que se pueden cometer son:</p>
+<ul>
+<li><strong>Error tipo I:</strong> Rechazar <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> es verdadera.</li>
+<li><strong>Error tipo II:</strong> No rechazar <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> es falsa.</li>
+</ul>
+<p>Es posible el error que se desea cometer, es decir, es posible establecer la probabilidad de cometer un error tipo I o II, pero no ambos. El <strong>nivel de significancia</strong> es la probabilidad de cometer un error tipo I cuando la hipótesis nula es verdadera. Para denotar el nivel de significancia se usa la letra griega <span class="math inline">\(\alpha\)</span>, y los valores que se suelen usar para <span class="math inline">\(\alpha\)</span> con 0.0 y 0.01.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Ejemplo 1.2  </strong></span>Walter Williams, columnista y profesor de economía en la universidad George Mason indica que siempre existe la posibilidad de cometer un error tipo I o un error tipo II al tomar una decisión (<em>The Cincinnati Enquirer</em>, 14 de agosto de 2005). Hace notar que la Food and Drug Administration corre el riesgo de cometer estos errores en sus procedimientos para la aprobación de medicamentos.</p>
+<p>Cuando comete un error tipo I, la FDA no aprueba un medicamento que es seguro y efectivo. Al cometer un error tipo II, la FDA aprueba un medicamento que presenta efectos secundarios imprevistos. Sin importar la decisión que se tome, la probabilidad de cometer un error costoso no se puede eliminar.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Ejercicio 1.4  </strong></span>Nielsen informó que los hombres jóvenes estadounidenses ven diariamente 56.2 minutos de televisión en las horas de mayor audiencia (<em>The Wall Street Journal Europe</em>, 18 de noviembre de 2003). Un investigador cree que en Alemania, los hombres jóvenes ven más tiempo la televisión en las horas de mayor audiencia. Este investigador toma una muestra de hombres jóvenes alemanes y registra el tiempo que ven televisión en un día. Los resultados muestrales se usan para probar las siguientes hipótesis nula y alternativa.</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+H_0&amp;: \mu = 56.2\\
+H_1&amp;: \mu &gt; 56.2\\
+\end{split}
+\end{equation}\]</span>
+<ol style="list-style-type: lower-alpha">
+<li>En esta situación, ¿cuál es el error tipo I? ¿Qué consecuencia tiene cometer este error?</li>
+<li>En esta situación, ¿cuál es el error tipo II? ¿Qué consecuencia tiene cometer este error?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Ejercicio 1.5  </strong></span>Suponga que se va a implantar un nuevo método de producción si mediante una prueba de hipótesis se confirma la conclusión de que el nuevo método de producción reduce el costo medio de operación por hora.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Dé las hipótesis nula y alternativa adecuadas si el costo medio de producción actual por hora es <span class="math inline">\(\$220\)</span>.</li>
+<li>En esta situación, ¿cuál es el error tipo I? ¿Qué consecuencia tiene cometer este error?</li>
+<li>En esta situación, ¿cuál es el error tipo II? ¿Qué consecuencia tiene cometer este error?</li>
+</ol>
+</div>
+</div>
+<div id="procedimiento-de-prueba" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Procedimiento de prueba<a href="pruebas-de-hipótesis.html#procedimiento-de-prueba" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un procedimiento de prueba es un regla, basada en datos muestrales, para decidir si rechazar <span class="math inline">\(H_0\)</span>. Este proceso consta de dos elementos:</p>
+<ul>
+<li><strong>Estadístico de prueba:</strong> Función de los datos muestrales en los cuales ha de basarse la decisión.</li>
+<li><strong>Región de rechazo:</strong> Conjunto de todos los valores estadísticos de prueba por los cuales <span class="math inline">\(H_0\)</span> será rechazada.</li>
+</ul>
+<p>Para decidir si <span class="math inline">\(H_0\)</span> es finalmente rechazada es posible ocupar dos métodos.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Método del valor p</strong></li>
+</ol>
+<p>Un valor-p es una probabilidad que porta a una medida de evidencia suministrada por la muestra contra la hipótesis nula. Valores pequeños indican una evidencia mayor contra la hipótesis nula.</p>
+<p>Además de representar un probabilidad, el valor-p puede ser vista como una porción de área bajo la curva. La figura <a href="pruebas-de-hipótesis.html#fig:graficovalorp">1.1</a> muestra la relación entre los distintos elementos ya mencionados.</p>
+<p>La curva corresponde a la función de probabilidad de los datos. Los valores centrales son aquellos que son más probables de observar (parte más alta de la curva), mientras que los valores extremos (derecha e izquierda) son los menos probables de observar. El punto de color rojo corresponde al estadístico de prueba, función que nos dará un valor con el que seremos capaces de rechazar o no <span class="math inline">\(H_0\)</span>. Finalmente el área de color verde corresponde al área bajo la curva desde el estadístico observado hacia la izquierda (en este caso).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graficovalorp"></span>
+<img src="img/Valor_p.png" alt="Estadístico de prueba para un prueba altenativa con signo $&gt;$" width="70%" />
+<p class="caption">
+Figura 1.1: Estadístico de prueba para un prueba altenativa con signo <span class="math inline">\(&gt;\)</span>
+</p>
+</div>
+<p>La tabla <a href="pruebas-de-hipótesis.html#tab:regiones">1.2</a>, da cuenta de la relación que existe entre las pruebas de hipótesis y la ubicación del valor-p en el gráfico presentado.</p>
+<table class="table table-condensed table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:regiones">Tabla 1.2: </span>Hipótesis alternativa, valor-p y estadístico de prueba
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Signo de comparación en <span class="math inline">\(H_1\)</span>
+</th>
+<th style="text-align:center;">
+Referencia
+</th>
+<th style="text-align:center;">
+Ubicación del estadístico de prueba y valor-p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(&gt;\)</span>
+</td>
+<td style="text-align:center;">
+Unilateral derecha
+</td>
+<td style="text-align:center;">
+A la derecha del gráfico
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(&lt;\)</span>
+</td>
+<td style="text-align:center;">
+Unilateral izquierda
+</td>
+<td style="text-align:center;">
+A la izquierda del gráfico
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(\neq\)</span>
+</td>
+<td style="text-align:center;">
+Bilateral
+</td>
+<td style="text-align:center;">
+A ambos lados del gráfico
+</td>
+</tr>
+</tbody>
+</table>
+<p>La regla de rechazo usando el valor-p es</p>
+<p><span class="math display">\[\text{Rechazar } H_0 \text{ si el valor-p } \leq \alpha\]</span></p>
+<p>En la figura <a href="pruebas-de-hipótesis.html#fig:regiones3">1.2</a>, se puede observar los tres casos posibles para las distintas hipótesis alternativas, en las cuales se ejemplifica un valor-p en cada uno de los casos. De izquierda a derecha, las hipótesis alternativas correspondientes son unilateral izquierda, unilateral derecha, y bilateral. La decisión de si en cada uno de los casos se rechaza o no la hipótesis nula, depende del valor elegido para la significancia.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:regiones3"></span>
+<img src="img/R1.png" alt="Estadísticos de prueba" width="30%" /><img src="img/R2.png" alt="Estadísticos de prueba" width="30%" /><img src="img/R3.png" alt="Estadísticos de prueba" width="30%" />
+<p class="caption">
+Figura 1.2: Estadísticos de prueba
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Método del valor crítico</strong></li>
+</ol>
+<p>Este método consiste en comparar el estadístico de prueba con un número fijo llamado <strong>valor crítico</strong>. El valor crítico es un punto de referencia para determinar si el valor del estadístico de prueba es lo suficientemente pequeño para rechazar la hipótesis nula. El valor
+crítico corresponde a una porción del área bajo la curva, llamada <span class="math inline">\(\alpha\)</span> (el cual es definido por el investigador), y está ubicada en el mismo sector que el valor-p. </p>
+<p>El intervalo de números generado a partir del valor crítico es lo denominado <strong>región de rechazo</strong>. En la figura <a href="pruebas-de-hipótesis.html#fig:regiones2">1.3</a>, se observa que un hipótesis es rechazada cuando el valor-p es menor a <span class="math inline">\(\alpha\)</span>, lo cual, es equivalente a decir, que estadístico de prueba es mayor (o menor) al valor crítico, a esto se le denomina “caer en la región de rechazo”.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:regiones2"></span>
+<img src="img/RR.png" alt="Valor-p, el área bajo la curva" width="80%" />
+<p class="caption">
+Figura 1.3: Valor-p, el área bajo la curva
+</p>
+</div>
+<p>Los lineamiento de como construir un estadístico de prueba y un valor-p se darán a conocer a partir de la sección <a href="pruebas-de-hipótesis.html#pruebas">1.2</a>.</p>
+</div>
+<div id="intervalos-de-confianza" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Intervalos de confianza<a href="pruebas-de-hipótesis.html#intervalos-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Existe un relación directa entre las pruebas de hipótesis y los intervalos de confianza, ya que estos pueden ser utilizados para rechazar o no <span class="math inline">\(H_0\)</span>. La tabla <a href="pruebas-de-hipótesis.html#tab:ICpruebas">1.3</a>, da cuenta de del tipo de intervalo de confianza que se debe elaborar para cada tipo de prueba de hipótesis.</p>
+<table class="table table-condensed table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:ICpruebas">Tabla 1.3: </span>Hipótesis alternativa e Intervalo de confianza
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Signo de comparación en <span class="math inline">\(H_1\)</span>
+</th>
+<th style="text-align:center;">
+Tipo de intervalo de confianza
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(&gt;\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\((a,\infty )\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(&lt;\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\((-\infty ,b)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(\neq\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\((a,b)\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A lo largo de las distintas pruebas, se abordarán los distintos métodos de prueba, incluyendo el uso de intervalos de confianza.</p>
+</div>
+</div>
+<div id="pruebas" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Pruebas de hipótesis para la media<a href="pruebas-de-hipótesis.html#pruebas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Esta sección se centra en el planteamiento y prueba de hipótesis relacionadas a la parámetro de media. Para cada uno de estos casos, se detalla el procedimiento en R y los distintos métodos de prueba para la decisión de rechazo de <span class="math inline">\(H_0\)</span>. En particular, las pruebas para este parámetro requieren asumir la suposición de distribución normal de los datos.</p>
+<div id="pruebas-de-hipótesis-para-la-media-de-una-distribución-normal-con-varianza-poblacional-conocida" class="section level3 unlisted unnumbered hasAnchor">
+<h3>Pruebas de hipótesis para la media de una distribución normal con varianza poblacional conocida<a href="pruebas-de-hipótesis.html#pruebas-de-hipótesis-para-la-media-de-una-distribución-normal-con-varianza-poblacional-conocida" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Aun cuando la suposición de que el valor de <span class="math inline">\(\sigma^2\)</span> es conocido, rara vez se cumple en la práctica. Este caso proporciona un buen punto de partida debido a la facilidad con que los procedimientos generales y sus propiedades pueden ser desarrollados. La hipótesis nula en los tres casos propondrá que <span class="math inline">\(\mu\)</span> tiene un valor numérico particular, el valor nulo, el cual será denotado por <span class="math inline">\(\mu_0\)</span>.</p>
+<p>El estadístico de prueba y los valores críticos de comparación están dados en la tabla <a href="pruebas-de-hipótesis.html#tab:unamedia1">1.4</a>.</p>
+<table class="table table-condensed table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unamedia1">Tabla 1.4: </span>Criterios de rechazo para la prueba de una media con varianza poblacional conocida
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Hipótesis nula
+</td>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Estadístico
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_0: \mu = \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Z_0 = \displaystyle\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Hipótesis alternativa
+</td>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Criterio de rechazo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_1: \mu \neq \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(|Z_0| \geq Z_{1-\alpha/2}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_1: \mu \gt \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Z_0 \geq Z_{1-\alpha}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_1: \mu \lt \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Z_0 \leq Z_{\alpha}\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Ejemplo 1.3  </strong></span>El índice Rockwell de dureza para acero se determina al presionar una punta de diamante en el acero y medir la profundidad de la penetración, el cual tiene un varianza de medición de 6. Para 50 especímenes de una aleación de acero, el índice Rockwell de dureza promedió 62. El fabricante dice que esta aleación tiene un índice de dureza promedio menor a 64. Asumiendo que el índice de dureza sigue una distribución normal, ¿hay suficiente evidencia para refutar lo dicho por el fabricante con un nivel de significancia de 1%?</p>
+<p>Al plantear la prueba de hipótesis se debe tener en cuenta que la hipótesis del investigador ha de estar reflejada en <span class="math inline">\(H_1\)</span>, tal como se muestra a continuación.</p>
+<span class="math display">\[\begin{equation}
+\notag
+H_0: \mu = 64\\
+H_1: \mu &lt; 64
+\end{equation}\]</span>
+<p>Luego, se desarrolla la expresión del estadístico de prueba, para conocer su valor numérico.</p>
+<span class="math display">\[\begin{equation}
+\notag
+Z_0 = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}} = \displaystyle\frac{62 - 64}{\sqrt{6}/\sqrt{50}} = -5.774
+\end{equation}\]</span>
+<p>Ocupando el método del valor crítico, escribimos el criterios de rechazo correspondiente. Sin embargo, aún está la tarea de determinar el valor crítico.</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+Z_0 &amp;\leq Z_{\alpha}\\
+-5.774 &amp;\leq Z_{0.01}\\
+\end{split}
+\end{equation}\]</span>
+<p>Para determinar el valor de <span class="math inline">\(Z_{0.01}\)</span> (tal como menciona en los cursos de Estadística I y Estadística descriptiva), el comando a ocupar</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="pruebas-de-hipótesis.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p =</span> <span class="fl">0.01</span>)</span></code></pre></div>
+<pre><code>## [1] -2.326348</code></pre>
+<p>Es claro que <span class="math inline">\(-5.774\)</span> es menor a <span class="math inline">\(-2.32\)</span>, es decir, que al cumplirse la condición de rechazo, esto implica que se rechaza <span class="math inline">\(H_0\)</span>. Por lo tanto, existe suficiente evidencia estadística para rechazar la hipótesis nula, es decir, se apoya la postura del fabricante respecto a un indice de dureza promedio menor a 64, con una significancia del 1% (o confianza del 99%).</p>
+<p>En caso de que deseemos utilizar el método del valor-p, es necesario apoyarnos en R para realizar el calculo de este. El comando necesario para calcular el valor depende la prueba que estemos llevando a cabo, por lo que en el siguiente <a href="https://github.com/Dfranzani/Estadistica_II_UDP/blob/main/resumenes/Rechazo.pdf">documento</a> podrán encontrar un resumen para las distintas pruebas.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="pruebas-de-hipótesis.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">5.774</span>)</span></code></pre></div>
+<pre><code>## [1] 3.870572e-09</code></pre>
+<p>El valor-p obtenido es evidentemente menor a la significancia (0.01), obteniéndose la misma conclusión antes expuesta.</p>
+<p>Respecto al intervalo de confianza, es posible determinarlo dada la siguiente expresión.</p>
+<span class="math display">\[\begin{equation}
+\left(-\infty, \bar{x} + Z_{1-\alpha}\frac{\sigma}{\sqrt{n}}\right)
+\end{equation}\]</span>
+<p>Reemplazando los valores dados en el enunciado se tiene</p>
+<span class="math display">\[\begin{equation}
+\notag
+\left(-\infty, 62 + Z_{0.99}\frac{6}{\sqrt{50}}\right) = (-\infty, 62.71)
+\end{equation}\]</span>
+<p>Al observar el intervalo de confianza, se debe observar si el valor de <span class="math inline">\(\mu_0\)</span> está dentro o fuera de este. En este caso, <span class="math inline">\(\mu_0 = 64\)</span> no se encuentra dentro del intervalo. Por lo tanto, se rechaza la hipótesis nula, obteniéndose la misma conclusión antes obtenida.</p>
+<p>Al igual que el valor-p, la forma en la que se debe usar el intervalo de confianza varía dependiendo del tipo de prueba de hipótesis que se realiza, por lo que en el siguiente <a href="https://github.com/Dfranzani/Estadistica_II_UDP/blob/main/resumenes/Resumen%20de%20intervalos%20de%20Hip%C3%B3tesis%20e%20IC.pdf">documento</a> podrán encontrar un resumen para las distintas pruebas, dicho documento incluye los distintos comando en R para obtener los resultados de una prueba de hipótesis de manera automática.</p>
+</div>
+<p>Para este tipo de pruebas, no hay comandos en R que permitan hacer el trabajo de manera automática. Esto es debido a lo expuesto en un principio: <strong>difícilmente se conoce la varianza poblacional en la práctica</strong>.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Ejercicio 1.6  </strong></span>Sea el estadístico de prueba <span class="math inline">\(Z\)</span> con una distribución normal estándar cuando <span class="math inline">\(H_0\)</span> es verdadera. Dé el nivel de significación en cada una de las siguientes situaciones:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(H_1: \mu &gt; \mu_0\)</span>, región de rechazo <span class="math inline">\(z\geq 1.88\)</span>.</li>
+<li><span class="math inline">\(H_1: \mu &lt; \mu_0\)</span>, región de rechazo <span class="math inline">\(z\leq -2.75\)</span>.</li>
+<li><span class="math inline">\(H_1: \mu \neq \mu_0\)</span>, región de rechazo <span class="math inline">\(z\geq 2.88\)</span> o <span class="math inline">\(z\leq -2.88\)</span>.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Ejercicio 1.7  </strong></span>Un fabricante de cajas de cartón afirma que sus cajas tienen un peso promedio de 5 kg. Para verificar esta afirmación, un cliente selecciona al azar 25 cajas y encuentra que el peso promedio es de 4.8 kg con una desviación estándar conocida de 0.5 kg. ¿Hay suficiente evidencia para rechazar la afirmación del fabricante al nivel de significancia del 5%?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-11" class="exercise"><strong>Ejercicio 1.8  </strong></span>Un entrenador de baloncesto cree que sus jugadores pueden hacer tiros libres con una precisión de al menos el 80%. Para probar su hipótesis, el entrenador toma una muestra aleatoria de 30 tiros libres y encuentra que la proporción de tiros exitosos es del 75%. Si la desviación estándar conocida de la proporción de tiros exitosos es del 5%, ¿hay suficiente evidencia para rechazar la hipótesis del entrenador al nivel de significancia del 1%?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Ejercicio 1.9  </strong></span>Un cirujano afirma que sus pacientes se recuperan en un promedio de 5 días después de una cirugía. Para probar su afirmación, el cirujano toma una muestra aleatoria de 20 pacientes y encuentra que la duración promedio de recuperación es de 6 días, con una desviación estándar conocida de 1.5 días. ¿Hay suficiente evidencia para rechazar la afirmación del cirujano al nivel de significancia del 10%?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-13" class="exercise"><strong>Ejercicio 1.10  </strong></span>Se cree que la cantidad promedio de cafeína en una taza de café es de 100 mg. Para probar esta hipótesis, se toma una muestra aleatoria de 50 tazas de café y se encuentra que la cantidad promedio de cafeína es de 105 mg, con una desviación estándar conocida de 15 mg. ¿Hay suficiente evidencia para rechazar la hipótesis nula al nivel de significancia del 5%?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-14" class="exercise"><strong>Ejercicio 1.11  </strong></span>Se desea evaluar si la altura promedio de una población de girasoles es de 150 cm. Para ello, se selecciona una muestra aleatoria de 30 girasoles y se encuentra que la altura promedio es de 155 cm, con una desviación estándar conocida de 5 cm. ¿Hay suficiente evidencia para rechazar la hipótesis nula al nivel de significancia del 1%?</p>
+</div>
+</div>
+<div id="pruebas-de-hipótesis-para-la-media-de-una-distribución-normal-con-varianza-poblacional-desconocida" class="section level3 unlisted unnumbered hasAnchor">
+<h3>Pruebas de hipótesis para la media de una distribución normal con varianza poblacional desconocida<a href="pruebas-de-hipótesis.html#pruebas-de-hipótesis-para-la-media-de-una-distribución-normal-con-varianza-poblacional-desconocida" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>De igual manera los expuesto en el primer caso, los pasos a seguir para probar una hipótesis son los mismo, y se mantendra así para cualquier caso.</p>
+<ol style="list-style-type: decimal">
+<li>Plantear las hipótesis nula y alternativa</li>
+<li>Identificar o establecer el nivel de significancia.</li>
+<li>Identificar los datos muestrales y poblacionales con los que se cuenta.</li>
+<li>Utilizar alguna de las reglas de decisión (Estadístico de prueba, valor-p o intervalo de confianza).</li>
+<li>Concluir</li>
+</ol>
+<p>En la situación de una prueba de hipótesis de la media, en la cual lo datos distribuyen normal y la varianza poblacional es desconocida, los criterios de rechazo son similares a los vistos anteriormente, sin embargo, cambia la distribución del estadístico de prueba, tal como se muestra en la tabla xxx.</p>
+<table class="table table-condensed table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unamedia2">Tabla 1.5: </span>Criterios de rechazo para la prueba de una media con varianza poblacional conocida
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Hipótesis nula
+</td>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Estadístico
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_0: \mu = \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(t_0 = \displaystyle\frac{\bar{x}-\mu_0}{S/\sqrt{n}}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Hipótesis alternativa
+</td>
+<td style="text-align:left;font-weight: bold;font-style: italic;">
+Criterio de rechazo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_1: \mu \neq \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(|t_0| \geq t_{1-\alpha/2, n-1}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_1: \mu \gt \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(t_0 \geq t_{1-\alpha,n-1}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_1: \mu \lt \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(t_0 \leq t_{\alpha,n-1}\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>donde <span class="math inline">\(n\)</span> corresponde al tamaño de la muestra.</p>
+<div class="example">
+<p><span id="exm:imacec" class="example"><strong>Ejemplo 1.4  </strong></span><strong>(Portafolio 2022, segundo semestre, pregunta 2)</strong> La base de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/imacec.csv"><em>imacec.csv</em></a>, contiene los datos del Imacec del área de producción de bienes en los sectores de Minería e Industria, desde enero de 2018 hasta junio de 2022. Establezca si hay suficiente evidencia estadística, para afirmar que, el valor promedio del Imacec de cada sector por separado, es mayor al promedio general de todos los sectores (denote el promedio general por <span class="math inline">\(\mu_0\)</span>). Establezca las hipótesis respectivas, estadísticos y criterios de rechazo, utilizando una significancia del 10%. Asume que las variables distribuyen normal y tienen varianza poblacional desconocida.</p>
+<p>En este caso al contar con una base de datos (y para este tipo de prueba), podemos hacer uso directamente de R para obtener el estadístico de prueba, valor-p e intervalo de confianza asociado.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="pruebas-de-hipótesis.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga de la base de datos</span></span>
+<span id="cb5-2"><a href="pruebas-de-hipótesis.html#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/imacec.csv&quot;</span>)</span></code></pre></div>
+<p>En primer lugar, obtenemos el valor de <span class="math inline">\(mu_0\)</span> para poder plantear la prueba de hipótesis</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="pruebas-de-hipótesis.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Promedio de todos los sectores</span></span>
+<span id="cb6-2"><a href="pruebas-de-hipótesis.html#cb6-2" aria-hidden="true" tabindex="-1"></a>promedio_general <span class="ot">=</span> <span class="fu">mean</span>(<span class="fu">c</span>(df<span class="sc">$</span>Mineria, <span class="co"># Valores del Imacec de Minería</span></span>
+<span id="cb6-3"><a href="pruebas-de-hipótesis.html#cb6-3" aria-hidden="true" tabindex="-1"></a>                          df<span class="sc">$</span>Industria)) <span class="co"># Valores del Imacec de Industria</span></span>
+<span id="cb6-4"><a href="pruebas-de-hipótesis.html#cb6-4" aria-hidden="true" tabindex="-1"></a>promedio_general <span class="co"># Mu_0</span></span></code></pre></div>
+<pre><code>## [1] 98.54167</code></pre>
+<p>Iniciamos con la prueba de hipótesis para el sector de minería.</p>
+<span class="math display">\[\begin{equation}
+    \notag
+    \begin{split}
+        H_0: \mu_{\text{Imacec-Mineria}} = 98.54167\\
+        H_1: \mu_{\text{Imacec-Mineria}} &gt; 98.54167
+    \end{split}
+\end{equation}\]</span>
+<p>Luego, haciendo uso de R obtenemos los elementos necesario para rechazar o no <span class="math inline">\(H_0\)</span>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="pruebas-de-hipótesis.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Minería</span></span>
+<span id="cb8-2"><a href="pruebas-de-hipótesis.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( <span class="co"># Prueba de hipótesis para el estadístico con distribución t-student</span></span>
+<span id="cb8-3"><a href="pruebas-de-hipótesis.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> df<span class="sc">$</span>Mineria, <span class="co"># Valores del Imacec de Minería</span></span>
+<span id="cb8-4"><a href="pruebas-de-hipótesis.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="co"># Signo de desigualdad de la hipótesis alternativa</span></span>
+<span id="cb8-5"><a href="pruebas-de-hipótesis.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">mu =</span> <span class="fl">98.54167</span>, <span class="co"># Valor del Mu_0</span></span>
+<span id="cb8-6"><a href="pruebas-de-hipótesis.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">conf.level =</span> <span class="fl">0.9</span> <span class="co"># Confianza = 1 - alfa</span></span>
+<span id="cb8-7"><a href="pruebas-de-hipótesis.html#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  df$Mineria
+## t = -1.2773, df = 53, p-value = 0.8965
+## alternative hypothesis: true mean is greater than 98.54167
+## 90 percent confidence interval:
+##  96.21024      Inf
+## sample estimates:
+## mean of x 
+##  97.38519</code></pre>
+<p>El estadístico reportado es <span class="math inline">\(t = -1.27373\)</span> con un valor-p de 0.8965, el cual, al ser mayor a la significancia de 0.05, implica que no existe suficiente evidencia estadística para rechazar <span class="math inline">\(H_0\)</span>, por lo que se asume que, el valor promedio del Imacec del sector de Minería no es mayor al promedio de general de ambos sectores.</p>
+<p>Utilizando el intervalo de confianza <span class="math inline">\((96.21, \infty)\)</span>, se observa que el valor de <span class="math inline">\(\mu_0 = 98.54\)</span> se encuentra dentro del intervalo, por ende, no existe suficiente evidencia estadística para rechazar <span class="math inline">\(H_0\)</span>, obteniéndose la misma conclusión que al usar el valor-p.</p>
+<p>La prueba de hipótesis para el sector de industria es la siguiente.</p>
+<span class="math display">\[\begin{equation}
+    \notag
+    \begin{split}
+        H_0: \mu_{\text{Imacec-Industria}} = 98.54167\\
+        H_1: \mu_{\text{Imacec-Industria}} &gt; 98.54167
+    \end{split}
+\end{equation}\]</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="pruebas-de-hipótesis.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Industria</span></span>
+<span id="cb10-2"><a href="pruebas-de-hipótesis.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( <span class="co"># Prueba de hipótesis para el estadístico con distribución t-student</span></span>
+<span id="cb10-3"><a href="pruebas-de-hipótesis.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> df<span class="sc">$</span>Industria, <span class="co"># Valores del Imacec de Industria</span></span>
+<span id="cb10-4"><a href="pruebas-de-hipótesis.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="co"># Signo de desigualdad de la hipótesis alternativa</span></span>
+<span id="cb10-5"><a href="pruebas-de-hipótesis.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">mu =</span> <span class="fl">98.54167</span>, <span class="co"># Valor del Mu_0</span></span>
+<span id="cb10-6"><a href="pruebas-de-hipótesis.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">conf.level =</span> <span class="fl">0.9</span> <span class="co"># Confianza = 1 - alfa</span></span>
+<span id="cb10-7"><a href="pruebas-de-hipótesis.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  df$Industria
+## t = 1.3678, df = 53, p-value = 0.08857
+## alternative hypothesis: true mean is greater than 98.54167
+## 90 percent confidence interval:
+##  98.60095      Inf
+## sample estimates:
+## mean of x 
+##  99.69815</code></pre>
+<p>El estadístico reportado es <span class="math inline">\(t = 1.3678\)</span> con un valor-p de 0.08857, el cual, al ser mayor a la significancia de 0.1, implica que existe suficiente evidencia estadística para rechazar <span class="math inline">\(H_0\)</span>, por lo que se asume que, el valor promedio del Imacec del sector de Industria es mayor al promedio de general de ambos sectores.</p>
+<p>Utilizando el intervalo de confianza <span class="math inline">\((98.6, \infty)\)</span>, se observa que el valor de <span class="math inline">\(\mu_0 = 98.54\)</span> no se encuentra dentro del intervalo, por ende, no existe suficiente evidencia estadística para rechazar <span class="math inline">\(H_0\)</span>, obteniéndose la misma conclusión que al usar el valor-p.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Ejercicio 1.12  </strong></span>Utilizando la base del ejemplo <a href="pruebas-de-hipótesis.html#exm:imacec">1.4</a>. Establezca si hay suficiente evidencia estadística para afirmar que, el valor promedio del Imacec de cada sector durante el año 2022, es mayor al promedio general de todos los sectores en el mismo año (denote el promedio general por <span class="math inline">\(\mu_{0}\)</span>). Establezca las hipótesis respectivas, estadísticos y criterios de rechazo, utilice una significancia del 7%. Asuma que las variables distribuyen normal y tienen varianza poblacional desconocida. Concluya.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:metano" class="exercise"><strong>Ejercicio 1.13  </strong></span>El control de emisión de residuos ha sido un tema que ha cobrado gran importancia en los últimos 20 años debido a los efectos del calentamiento global. Uno de los tantos residuos que contamina el aire es el Metano (CH4). Para estudiar este fenómeno haremos uso de la base <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%202/metano.csv"><em>metano.csv</em></a>, la cual contiene los siguientes datos:</p>
+<ul>
+<li>Año: año en el que se realiza la medición de emisión de CH4.</li>
+<li>Mes: mes del año en el que se realiza la medición de emisión de CH4.</li>
+<li>CH4: concentración de CH4 (partes por miles de millones) en un muestra de aire.</li>
+</ul>
+<p>Establezca si hay suficiente evidencia estadística para afirmar los siguiente:</p>
+<ol style="list-style-type: decimal">
+<li>La concentración promedio de metano es distinta a 1700 partes por millón.</li>
+<li>La concentración promedio de metano del año 2021 es superior a 1780 partes por millón.</li>
+<li>La concentración promedio de metano del periodo en el periodo de años 2019 - 2022 (inclusive) es inferior a 1750 partes por millón.</li>
+</ol>
+<p>Establezca las hipótesis respectivas, estadísticos y criterios de rechazo, utilice una significancia del 7%. Asuma que las variables distribuyen normal y tienen varianza poblacional desconocida. Concluya.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:consumidor" class="exercise"><strong>Ejercicio 1.14  </strong></span>La base de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%202/consumidor.csv"><em>consumidor.csv</em></a> contiene registros del Índice de Confianza del Consumidor (ICC). Este indicador de confianza del consumidor proporciona una indicación de la evolución futura del consumo y el ahorro de los hogares. Un indicador por encima de 100 señala un aumento en la confianza de los consumidores hacia la situación económica futura, como consecuencia de la cual son menos propensos a ahorrar y más inclinados a gastar dinero en compras importantes en los próximos 12 meses. Los valores por debajo de 100 indican una actitud pesimista hacia la evolución futura de la economía, lo que posiblemente resulte en una tendencia a ahorrar más y consumir menos.</p>
+<p>Las variables que contiene la base de datos son las siguientes:</p>
+<ul>
+<li>Locacion: lugar en donde se mide el ICC (FRA = Francia, POL = Polonia, OECD = OCDE, ESP = España, BEL = Bélgica, ITA = Italia, DEU = Alemania).</li>
+<li>Mes: corresponde al mes en el que se realiza la medición del índice.</li>
+<li>Ano: corresponde al año en el que se realiza la medición del índice.</li>
+<li>ICC: valor del índice de confianza del consumidor.</li>
+</ul>
+<p>Establezca si hay suficiente evidencia estadística para afirmar los siguiente:</p>
+<ol style="list-style-type: decimal">
+<li>El promedio del ICC es distinto a 100 puntos.</li>
+<li>El promedio del ICC en Francia es menor a 105 puntos.</li>
+<li>El promedio del ICC en Alemania es mayor a 107 puntos.</li>
+</ol>
+<p>Establezca las hipótesis respectivas, estadísticos y criterios de rechazo, utilice una significancia del 12%. Asuma que las variables distribuyen normal y tienen varianza poblacional desconocida. Concluya.</p>
+</div>
+</div>
+</div>
+<div id="pruebas-de-hipótesis-para-la-diferencia-de-medias" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Pruebas de hipótesis para la diferencia de medias<a href="pruebas-de-hipótesis.html#pruebas-de-hipótesis-para-la-diferencia-de-medias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-conocidas" class="section level3 unlisted unnumbered hasAnchor">
+<h3>Prueba de hipótesis para la diferencia de medias de dos distribuciones normales con varianzas poblacionales conocidas<a href="pruebas-de-hipótesis.html#prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-conocidas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-desconocidas-e-iguales" class="section level3 unlisted unnumbered hasAnchor">
+<h3>Prueba de hipótesis para la diferencia de medias de dos distribuciones normales con varianzas poblacionales desconocidas e iguales<a href="pruebas-de-hipótesis.html#prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-desconocidas-e-iguales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-desconocidas-y-distintas" class="section level3 unlisted unnumbered hasAnchor">
+<h3>Prueba de hipótesis para la diferencia de medias de dos distribuciones normales con varianzas poblacionales desconocidas y distintas<a href="pruebas-de-hipótesis.html#prueba-de-hipótesis-para-la-diferencia-de-medias-de-dos-distribuciones-normales-con-varianzas-poblacionales-desconocidas-y-distintas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="prueba-de-hipótesis-para-comparación-de-varianzas" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Prueba de hipótesis para comparación de varianzas<a href="pruebas-de-hipótesis.html#prueba-de-hipótesis-para-comparación-de-varianzas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="prueba-de-hipótesis-para-la-diferencia-de-proporciones" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Prueba de hipótesis para la diferencia de proporciones<a href="pruebas-de-hipótesis.html#prueba-de-hipótesis-para-la-diferencia-de-proporciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
+<div id="ref-anderson" class="csl-entry">
+Anderson, D. R., Sweeney, D. J., &amp; Williams, T. A. (2008). <em>Estadística para administración y economía</em> (10a ed). Cengage Learning.
+</div>
+<div id="ref-Devore" class="csl-entry">
+Devore, J. L. (2008). <em>Probability and statistics for engineering and the sciences</em> (7th ed). Thomson/Brooks/Cole.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modalidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regresión-lineal.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": true,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["est2+inferencia.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": null
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
